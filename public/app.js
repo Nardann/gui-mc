@@ -78,6 +78,9 @@ $(document).ready(function () {
         // Ajouter l'input et le bouton au menu
         configMenu.append(inputName, saveButton);
     
+        // Ajouter le menu à l'élément
+        item.append(configMenu);
+    
         // Stocker le texte de l'item avant modification
         const originalItemText = itemName;
     
@@ -99,7 +102,6 @@ $(document).ready(function () {
         // Enregistrer le menu actif
         activeConfigMenu = configMenu;
     }
-  
   
     // Fonction pour masquer le menu de configuration
     function hideConfigMenu() {
