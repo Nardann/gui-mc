@@ -80,15 +80,9 @@ $(document).ready(function () {
     
         // Ajouter le menu à l'élément
         item.append(configMenu);
-    
-        // Stocker le texte de l'item avant modification
-        const originalItemText = itemName;
-    
+
         // Afficher le menu
         configMenu.show();
-    
-        // Activer l'input directement
-        inputName.focus();
     
         // Gestionnaire de clic sur le bouton de sauvegarde
         saveButton.on('click', function (e) {
