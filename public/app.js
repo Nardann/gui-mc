@@ -63,7 +63,7 @@ $(document).ready(function () {
         const inventory = $('.inventory');
         const rows = inventory.children('.inventory-row');
     
-        if (rows.length > 3) {
+        if (rows.length > 1) {
           rows.last().remove();
         }
     }
