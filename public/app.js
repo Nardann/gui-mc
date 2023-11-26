@@ -1,11 +1,17 @@
 // public/app.js
 
 $(document).ready(function () {
-    // Exemple de génération d'une ligne d'inventaire
-    generateInventoryRow();
-  
     // Gestionnaire de clic sur les éléments de l'inventaire
-    $('.inventory').on('click', '.inventory-item', function () {
+    $('.inventory').on('click', '.inventory-item', function (e) {
+      // Si le clic est un clic droit, ignorer
+      if (e.which === 3) return;
+  
+      showConfigMenu($(this));
+    });
+  
+    // Gestionnaire de clic droit pour ouvrir le menu de configuration
+    $('.inventory').on('contextmenu', '.inventory-item', function (e) {
+      e.preventDefault();
       showConfigMenu($(this));
     });
   
@@ -16,12 +22,35 @@ $(document).ready(function () {
       }
     });
   
-    // Fonction pour générer une ligne d'inventaire
-    function generateInventoryRow() {
+    // Gestionnaire de clic sur les boutons Ajouter/Supprimer
+    $('#addRowBtn').on('click', function () {
+      addInventoryRow();
+    });
+  
+    $('#removeRowBtn').on('click', function () {
+      removeInventoryRow();
+    });
+  
+    // Fonction pour ajouter une ligne d'inventaire
+    function addInventoryRow() {
       const inventory = $('.inventory');
+      const newRow = $('<div class="inventory-row"></div>');
+  
       for (let i = 0; i < 9; i++) {
         const item = $('<div class="inventory-item">Item ' + (i + 1) + '</div>');
-        inventory.append(item);
+        newRow.append(item);
+      }
+  
+      inventory.append(newRow);
+    }
+  
+    // Fonction pour supprimer une ligne d'inventaire
+    function removeInventoryRow() {
+      const inventory = $('.inventory');
+      const rows = inventory.children('.inventory-row');
+  
+      if (rows.length > 1) {
+        rows.last().remove();
       }
     }
   
