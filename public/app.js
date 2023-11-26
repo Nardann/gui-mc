@@ -70,49 +70,43 @@ $(document).ready(function () {
   
     // Fonction pour afficher le menu de configuration
     function showConfigMenu(item) {
-        const configMenu = $('<div class="config-menu"></div>');
-        const itemName = item.text();
-        const inputName = $('<input type="text" class="config-input" placeholder="Nom de l\'item">');
-        const saveButton = $('<button class="save-btn">Sauvegarder</button>');
-
-        // Vérifier s'il y a une valeur en cache et l'afficher dans l'input
-        const cachedValue = sessionStorage.getItem('cachedValue');
-        if (cachedValue) {
-        inputName.val(cachedValue);
-        }
-
-        // Ajouter l'input et le bouton au menu
-        configMenu.append(inputName, saveButton);
-
-        // Ajouter le menu à l'élément
-        item.append(configMenu);
-
-        // Afficher le menu
-        configMenu.show();
-
-        // Activer l'input directement
-        inputName.focus();
-
-        // Gestionnaire de clic sur le bouton de sauvegarde
-        saveButton.on('click', function () {
+      const configMenu = $('<div class="config-menu"></div>');
+      const itemName = item.children('.config-input').length ? item.children('.config-input').val() : item.text();
+      const inputName = $('<input type="text" class="config-input" placeholder="Nom de l\'item" value="' + itemName + '">');
+      const saveButton = $('<button class="save-btn">Sauvegarder</button>');
+  
+      // Ajouter l'input et le bouton au menu
+      configMenu.append(inputName, saveButton);
+  
+      // Ajouter le menu à l'élément
+      item.append(configMenu);
+  
+      // Afficher le menu
+      configMenu.show();
+  
+      // Activer l'input directement
+      inputName.focus();
+  
+      // Gestionnaire de clic sur le bouton de sauvegarde
+      saveButton.on('click', function () {
         const enteredValue = inputName.val();
-        itemName.text(enteredValue);
+        item.text(enteredValue);
         // Enregistrer la valeur dans le cache
         sessionStorage.setItem('cachedValue', enteredValue);
         hideConfigMenu();
-        });
-
-        // Gestionnaire de perte de focus sur l'input pour sauvegarder automatiquement
-        inputName.on('blur', function () {
+      });
+  
+      // Gestionnaire de perte de focus sur l'input pour sauvegarder automatiquement
+      inputName.on('blur', function () {
         const enteredValue = inputName.val();
-        itemName.text(enteredValue);
+        item.text(enteredValue);
         // Enregistrer la valeur dans le cache
         sessionStorage.setItem('cachedValue', enteredValue);
         hideConfigMenu();
-        });
-
-        // Enregistrer le menu actif
-        activeConfigMenu = configMenu;
+      });
+  
+      // Enregistrer le menu actif
+      activeConfigMenu = configMenu;
     }
   
     // Fonction pour masquer le menu de configuration
