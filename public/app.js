@@ -76,7 +76,7 @@ $(document).ready(function () {
         const saveButton = $('<button class="save-btn">Sauvegarder</button>');
     
         // Ajouter l'input et le bouton au menu
-        configMenu.append(inputName, saveButton);
+        configMenu.append(inputName, saveButton); 
     
         // Ajouter le menu à l'élément
         item.append(configMenu);
