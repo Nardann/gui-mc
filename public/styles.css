@@ -32,11 +32,11 @@ body {
     padding: 10px;
     text-align: center;
     cursor: pointer;
-  }
+}
   
   .inventory-item:hover {
-    background-color: #e0e0e0;
-  }
+    background-color: #e0e0e0
+}  
   
   .config-menu {
     position: absolute;
