@@ -1,6 +1,8 @@
 // public/app.js
 
 $(document).ready(function () {
+    // ...
+  
     // Gestionnaire de clic sur les éléments de l'inventaire
     $('.inventory').on('click', '.inventory-item', function (e) {
       // Si le clic est un clic droit, ignorer
@@ -22,7 +24,7 @@ $(document).ready(function () {
       }
     });
   
-    // Gestionnaire de clic sur les boutons Ajouter/Supprimer
+    // Gestionnaire de clic sur les boutons Ajouter/Supprimer (utilisation de délégués d'événements)
     $('#addRowBtn').on('click', function () {
       addInventoryRow();
     });
