@@ -35,7 +35,9 @@ $(document).ready(function () {
   
       // Gestionnaire de clic sur les boutons Ajouter/Supprimer (utilisation de délégués d'événements)
     $('#addRowBtn').on('click', function () {
+    if ($('.inventory-row').length < 6) {
         addInventoryRow();
+    }
     });
 
     $('#removeRowBtn').on('click', function () {
@@ -46,13 +48,13 @@ $(document).ready(function () {
     function addInventoryRow() {
         const inventory = $('.inventory');
         const newRow = $('<div class="inventory-row"></div>');
-
+    
         for (let i = 0; i < 9; i++) {
-        const itemIndex = inventory.children('.inventory-row').length * 9 + i;
-        const item = $(`<div class="inventory-item">Item ${itemIndex}</div>`);
-        newRow.append(item);
+          const itemIndex = inventory.children('.inventory-row').length * 9 + i;
+          const item = $(`<div class="inventory-item">Item ${itemIndex}</div>`);
+          newRow.append(item);
         }
-
+    
         inventory.append(newRow);
     }
 
@@ -60,9 +62,9 @@ $(document).ready(function () {
     function removeInventoryRow() {
         const inventory = $('.inventory');
         const rows = inventory.children('.inventory-row');
-
-        if (rows.length > 1) {
-        rows.last().remove();
+    
+        if (rows.length > 3) {
+          rows.last().remove();
         }
     }
 
