@@ -72,7 +72,7 @@ $(document).ready(function () {
     function showConfigMenu(item) {
         const configMenu = $('<div class="config-menu"></div>');
         const itemName = item.text();
-        const inputName = $('<input type="text" placeholder="Nom de l\'item" value="' + itemName + '">');
+        const inputName = $('<input type="text" class="config-input" placeholder="Nom de l\'item" value="' + itemName + '">');
         const saveButton = $('<button class="save-btn">Sauvegarder</button>');
     
         // Ajouter l'input et le bouton au menu
@@ -87,6 +87,9 @@ $(document).ready(function () {
         // Afficher le menu
         configMenu.show();
     
+        // Activer l'input directement
+        inputName.focus();
+    
         // Gestionnaire de clic sur le bouton de sauvegarde
         saveButton.on('click', function (e) {
         e.stopPropagation(); // Empêcher la propagation du clic pour éviter la fermeture du menu
@@ -97,6 +100,12 @@ $(document).ready(function () {
         // Gestionnaire de clic sur l'input pour empêcher la propagation
         inputName.on('click', function (e) {
         e.stopPropagation();
+        });
+    
+        // Gestionnaire de perte de focus sur l'input pour sauvegarder automatiquement
+        inputName.on('blur', function () {
+        itemName.text(inputName.val());
+        hideConfigMenu();
         });
     
         // Enregistrer le menu actif
