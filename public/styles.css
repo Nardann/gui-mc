@@ -12,8 +12,8 @@ body {
   }
   
   .inventory {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    display: flex; /* Utiliser une disposition flex pour empiler les lignes */
+    flex-wrap: wrap; /* Permettre aux lignes de s'enrouler les unes en dessous des autres */
     gap: 5px;
     max-width: 600px;
     padding: 20px;
@@ -21,12 +21,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .inventory-row {
-    display: flex; /* Utiliser une disposition flex pour empiler les lignes */
-    gap: 5px;
-  }
-  
   .inventory-item {
+    flex: 1; /* Permettre à chaque élément de s'étendre pour occuper tout l'espace disponible */
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
