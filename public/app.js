@@ -39,7 +39,8 @@ $(document).ready(function () {
         const newRow = $('<div class="inventory-row"></div>');
 
         for (let i = 0; i < 9; i++) {
-        const item = $('<div class="inventory-item">Item ' + (i + 1) + '</div>');
+        const itemIndex = inventory.children('.inventory-row').length * 9 + i;
+        const item = $(`<div class="inventory-item">Item ${itemIndex}</div>`);
         newRow.append(item);
         }
 
