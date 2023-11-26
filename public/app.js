@@ -70,35 +70,36 @@ $(document).ready(function () {
   
     // Fonction pour afficher le menu de configuration
     function showConfigMenu(item) {
-      const configMenu = $('<div class="config-menu"></div>');
-      const itemName = item.text();
-      const inputName = $('<input type="text" placeholder="Nom de l\'item" value="' + itemName + '">');
-      const saveButton = $('<button class="save-btn">Sauvegarder</button>');
-  
-      // Ajouter l'input et le bouton au menu
-      configMenu.append(inputName, saveButton);
-  
-      // Ajouter le menu à l'élément
-      item.append(configMenu);
-  
-      // Afficher le menu
-      configMenu.show();
-  
-      // Gestionnaire de clic sur le bouton de sauvegarde
-      saveButton.on('click', function (e) {
+        const configMenu = $('<div class="config-menu"></div>');
+        const itemName = item.text();
+        const inputName = $('<input type="text" placeholder="Nom de l\'item" value="' + itemName + '">');
+        const saveButton = $('<button class="save-btn">Sauvegarder</button>');
+    
+        // Ajouter l'input et le bouton au menu
+        configMenu.append(inputName, saveButton);
+    
+        // Stocker le texte de l'item avant modification
+        const originalItemText = itemName;
+    
+        // Afficher le menu
+        configMenu.show();
+    
+        // Gestionnaire de clic sur le bouton de sauvegarde
+        saveButton.on('click', function (e) {
         e.stopPropagation(); // Empêcher la propagation du clic pour éviter la fermeture du menu
-        itemName.text(inputName.val());
+        itemName.text(originalItemText); // Utiliser la valeur originale au lieu de la valeur actuelle de l'input
         hideConfigMenu();
-      });
-  
-      // Gestionnaire de clic sur l'input pour empêcher la propagation
-      inputName.on('click', function (e) {
+        });
+    
+        // Gestionnaire de clic sur l'input pour empêcher la propagation
+        inputName.on('click', function (e) {
         e.stopPropagation();
-      });
-  
-      // Enregistrer le menu actif
-      activeConfigMenu = configMenu;
+        });
+    
+        // Enregistrer le menu actif
+        activeConfigMenu = configMenu;
     }
+  
   
     // Fonction pour masquer le menu de configuration
     function hideConfigMenu() {
