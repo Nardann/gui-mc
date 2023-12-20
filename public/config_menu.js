@@ -1,7 +1,7 @@
 function showConfigMenu(event, caseId) {
     event.preventDefault(); // Prevent the default context menu
 
-    const configBox = document.getElementById("configBox");
+    const configBox = document.getElementById("inventory");
     const input1 = document.getElementById("input1");
     const input2 = document.getElementById("input2");
 
@@ -19,7 +19,7 @@ function showConfigMenu(event, caseId) {
 }
 
 function saveConfiguration() {
-    const configBox = document.getElementById("configBox");
+    const configBox = document.getElementById("inventory");
     const input1 = document.getElementById("input1");
     const input2 = document.getElementById("input2");
 
