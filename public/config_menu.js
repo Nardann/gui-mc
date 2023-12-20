@@ -6,8 +6,8 @@ function showConfigMenu(event, caseId) {
     const input2 = document.getElementById("input2");
 
     // Set unique identifiers for inputs based on the cellId
-    input1.setAttribute("data-cell-id", caseId);
-    input2.setAttribute("data-cell-id", caseId);
+    input1.setAttribute("data-case-id", caseId);
+    input2.setAttribute("data-case-id", caseId);
 
     // Set initial values based on the cellId or retrieve values from storage
     // For example, you might retrieve stored values for each cell from a database
@@ -23,7 +23,7 @@ function saveConfiguration() {
     const input1 = document.getElementById("input1");
     const input2 = document.getElementById("input2");
 
-    const cellId = input1.getAttribute("data-cell-id");
+    const cellId = input1.getAttribute("data-case-id");
 
     // Retrieve values from inputs and save to storage (e.g., a database) based on the cellId
     const input1Value = input1.value;
