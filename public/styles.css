@@ -38,12 +38,11 @@ body {
     background-color: #e0e0e0
 }  
   
-  .config-menu {
+.config-box {
+    display: none;
     position: absolute;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    z-index: 1000;
-    display: none;
-  }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
   
