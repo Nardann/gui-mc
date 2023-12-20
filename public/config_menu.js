@@ -1,4 +1,4 @@
-function showConfigMenu(event, cellId) {
+function showConfigMenu(event, caseId) {
     event.preventDefault(); // Prevent the default context menu
 
     const configBox = document.getElementById("configBox");
@@ -6,8 +6,8 @@ function showConfigMenu(event, cellId) {
     const input2 = document.getElementById("input2");
 
     // Set unique identifiers for inputs based on the cellId
-    input1.setAttribute("data-cell-id", cellId);
-    input2.setAttribute("data-cell-id", cellId);
+    input1.setAttribute("data-cell-id", caseId);
+    input2.setAttribute("data-cell-id", caseId);
 
     // Set initial values based on the cellId or retrieve values from storage
     // For example, you might retrieve stored values for each cell from a database
