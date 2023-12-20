@@ -14,7 +14,7 @@ $(document).ready(function () {
   
     // Fonction pour ajouter une ligne d'inventaire
     function addInventoryRow() {
-      const inventory = $('.inventory');
+      const inventory = $('#inventory');
       const newRow = $('<div class="inventory-row"></div>');
   
       for (let i = 0; i < 9; i++) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
   
     // Fonction pour supprimer une ligne d'inventaire
     function removeInventoryRow() {
-      const inventory = $('.inventory');
+      const inventory = $('#inventory');
       const rows = inventory.children('.inventory-row');
   
       if (rows.length > 1) {
