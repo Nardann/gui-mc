@@ -4,10 +4,10 @@ function showConfigMenu(event, caseId) {
     const configBox = document.getElementById("inventory");
     const input1 = document.getElementById("input1");
     const input2 = document.getElementById("input2");
-
-    // Set unique identifiers for inputs based on the cellId
-    input1.setAttribute("data-case-id", caseId);
-    input2.setAttribute("data-case-id", caseId);
+    for (let i = 0; i < 54; i++) {
+        const case${itemIndex} = document.getElementById("inventory-item-${itemIndex}");
+        case${itemIndex}.setAttribute("data-case-id", case${itemIndex});
+      }
 
     // Set initial values based on the cellId or retrieve values from storage
     // For example, you might retrieve stored values for each cell from a database
