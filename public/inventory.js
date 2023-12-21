@@ -19,18 +19,20 @@ $(document).ready(function () {
             const itemIndex = inventory.children('.inventory-row').length * 9 + i;
             const item = $(`
                 <div class="inventory-items" id="inventory-item-${itemIndex}">Item_${itemIndex}</div>
-                <div class="item-config" id="itemConfig${itemIndex}">
-                    <label for="on${itemIndex}">Activer</label>
-                    <input type="checkbox" id="on${itemIndex}" name="on${itemIndex}">
-                    <br>
-                    <label for="name${itemIndex}">Name</label><br>
-                    <input type="text" id="name${itemIndex}" name="name${itemIndex}" value="">
-                    <br>
-                    <label for="display_name${itemIndex}">Display Name</label><br>
-                    <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
-
-                    <br><br>
-                    <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
+                <div class="item-config grid" id="itemConfig${itemIndex}">
+                    <div class="gridA">
+                        <label for="on${itemIndex}">Activer</label>
+                        <input type="checkbox" id="on${itemIndex}" name="on${itemIndex}">
+                        <br>
+                        <label for="name${itemIndex}">Name</label><br>
+                        <input type="text" id="name${itemIndex}" name="name${itemIndex}" value="">
+                        <br>
+                        <label for="display_name${itemIndex}">Display Name</label><br>
+                        <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
+    
+                        <br><br>
+                        <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
+                    </div>
                 </div>
             `);
 
