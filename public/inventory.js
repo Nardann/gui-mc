@@ -33,7 +33,7 @@ $(document).ready(function () {
                         <br><br>
                     </div>
                     <div class="gridC">
-                        <br><br>
+                        <br>
                         <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
                     </div>
                 </div>
