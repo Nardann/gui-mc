@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: grid;
+    display: block;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
