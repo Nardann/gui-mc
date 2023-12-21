@@ -19,11 +19,16 @@ $(document).ready(function () {
 
       for (let i = 0; i < 9; i++) {
         const itemIndex = inventory.children('.inventory-row').length * 9 + i;
-        const item = $(`<div class="inventory-items" id="inventory-item-${itemIndex}" onclick="open(itemConfig$${itemIndex})">Item ${itemIndex}</div>
+        const item = $(`<div class="inventory-items" id="inventory-item-${itemIndex}">Item ${itemIndex}</div>
                       <div class="item-config" id="itemConfig${itemIndex}">
                       <input type="text" name="name"/>
                       </div>`);
         newRow.append(item);
+        document.getElementById("inventory-item-${itemIndex}").addEventListener("click", open(itemConfig${itemIndex}) {
+            if (event.button === 0) {
+                handleClick(this.id);
+            }
+        });
       }
 
       inventory.append(newRow);
