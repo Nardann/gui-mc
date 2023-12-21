@@ -20,7 +20,7 @@ $(document).ready(function () {
             const item = $(`
                 <div class="inventory-items" id="inventory-item-${itemIndex}">Item_${itemIndex}</div>
                 <div class="item-config" id="itemConfig${itemIndex}">
-                    <label for="on${itemIndex}">Activer</label><br>
+                    <label for="on${itemIndex}">Activer</label>
                     <input type="checkbox" id="on${itemIndex}" name="on${itemIndex}">
                     <br>
                     <label for="name${itemIndex}">Name</label><br>
