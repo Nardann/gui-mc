@@ -21,7 +21,7 @@ $(document).ready(function () {
                 <div class="inventory-items" id="inventory-item-${itemIndex}">Item_${itemIndex}</div>
                 <div class="item-config" id="itemConfig${itemIndex}">
                     <input type="text" name="name"/>
-                    <input class="close" id="close${itemIndex}" type="button" onclick="close('itemConfig${itemIndex}')"value="close"/>
+                    <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
                 </div>
             `);
 
