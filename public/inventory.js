@@ -46,11 +46,6 @@ $(document).ready(function () {
         openConfig(`itemConfig${itemIndex}`);
     });
 
-    // Fonction pour ouvrir la configuration
-    function openConfig(itemConfigId) {
-        const configId = $("#" + itemConfigId);
-        configId.show();
-    }
 
     // Ajouter trois lignes d'inventaire au démarrage
     for (let i = 0; i < 3; i++) {
