@@ -50,11 +50,6 @@ body {
 }
 
 
-
-div {
-	display: grid;
-	place-content: center;
-}
 // Text
 input[type=text] {
 	appearance: none;
