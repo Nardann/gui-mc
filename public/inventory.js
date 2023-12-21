@@ -28,6 +28,8 @@ $(document).ready(function () {
                     
                     <label for="display_name${itemIndex}">Name</label><br>
                     <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
+
+                    <br>
                     <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
                 </div>
             `);
