@@ -1,3 +1,5 @@
+let configOpen = false;
+
 // Fonction pour ouvrir la configuration
 function openConfig(itemConfigId) {
     if (!configOpen) {
