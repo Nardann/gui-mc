@@ -1,5 +1,5 @@
 function open(caseId) {
-    const caseId = document.getElementById(caseId);
-    caseId.style.display = "block";
+    const configId = document.getElementById(caseId);
+    configId.style.display = "block";
 }
 
