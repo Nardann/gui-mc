@@ -7,7 +7,7 @@ function openConfig(itemConfigId) {
         configId.show();
         configOpen = true;
     }else {
-        showNotification("Déja ouvert", "Veuillez fermer la configuration deja ouverte")
+        showNotification("⛔", "Veuillez fermer la configuration deja ouverte")
     }
 }
 
