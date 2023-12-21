@@ -9,23 +9,8 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-    grid-template-areas:
-        ". . . . . . . ."
-        ". a a a a a a ."
-        ". b b b b b b ."
-        ". b b b b b b ."
-        ". . . c c . . .";
   }
 
-.gridMainA {
-  grid-area: a;
-}
-.gridMainB {
-  grid-area: b;
-}
-.gridMainC {
-  grid-area: c;
-}
 
   .inventory {
     display: flex;
