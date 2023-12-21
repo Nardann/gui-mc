@@ -21,7 +21,7 @@ $(document).ready(function () {
                 <div class="inventory-items" id="inventory-item-${itemIndex}">Item_${itemIndex}</div>
                 <div class="item-config" id="itemConfig${itemIndex}">
                     <input type="text" name="name"/>
-                    <input id="close" type="button" value="close"/>
+                    <input class="close" id="close${itemIndex}" type="button" value="close"/>
                 </div>
             `);
 
@@ -48,8 +48,8 @@ $(document).ready(function () {
     });
 
     // Utilisation de la délégation d'événements pour gérer le clic sur les éléments avec la classe "inventory-items"
-    $('#inventory').on('click', '#close', function () {
-        const itemIndex = $(this).attr('id').replace('close');
+    $('#inventory').on('click', '.close', function () {
+        const itemIndex = $(this).attr('id').replace('close-','');
         closeConfig(`itemConfig${itemIndex}`);
     });
 
