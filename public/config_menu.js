@@ -13,5 +13,6 @@ function openConfig(itemConfigId) {
 function closeConfig(itemConfigId) {
     const configId = $("#" + itemConfigId);
     configId.hide();  // Utilisez .hide() pour masquer l'élément
+    configOpen = false;
 }
 
