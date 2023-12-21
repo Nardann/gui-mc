@@ -6,6 +6,8 @@ function openConfig(itemConfigId) {
         const configId = $("#" + itemConfigId);
         configId.show();
         configOpen = true;
+    }else {
+        showNotification("Déja ouvert", "Veuillez fermer la configuration deja ouverte")
     }
 }
 
