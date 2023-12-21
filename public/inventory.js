@@ -9,7 +9,10 @@ $(document).ready(function () {
     $('#removeRowBtn').on('click', function () {
         removeInventoryRow();
     });
-
+    function open(caseId) {
+        const configId = document.getElementById(caseId);
+        configId.style.display = "block";
+    }
     // Fonction pour ajouter une ligne d'inventaire
     function addInventoryRow() {
         const inventory = $('#inventory');
@@ -50,3 +53,6 @@ $(document).ready(function () {
         addInventoryRow();
     }
 });
+
+
+
