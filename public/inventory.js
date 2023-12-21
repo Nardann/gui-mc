@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('#removeRowBtn').on('click', function () {
         removeInventoryRow();
     });
+
     // Fonction pour ajouter une ligne d'inventaire
     function addInventoryRow() {
         const inventory = $('#inventory');
@@ -22,18 +23,18 @@ $(document).ready(function () {
                     <input type="text" name="name"/>
                 </div>
             `);
+
+            // Ajout du gestionnaire d'événements avec jQuery
             item.find(`#inventory-item-${itemIndex}`).on('click', function () {
                 openConfig(`itemConfig${itemIndex}`);
             });
+
             newRow.append(item);
         }
 
         inventory.append(newRow);
     }
-    function openConfig(itemConfigId) {
-        const configId = document.getElementById(itemConfigId);
-        configId.style.display = "block";
-    }
+
     // Fonction pour supprimer une ligne d'inventaire
     function removeInventoryRow() {
         const inventory = $('#inventory');
@@ -44,10 +45,10 @@ $(document).ready(function () {
         }
     }
 
-    // Fonction pour gérer le clic gauche sur itemConfig
-    function handleClick(itemConfigId) {
-        alert(`Clic gauche sur ${itemConfigId}`);
-        // Vous pouvez effectuer d'autres actions avec l'ID ici
+    // Fonction pour ouvrir la configuration
+    function openConfig(itemConfigId) {
+        const configId = document.getElementById(itemConfigId);
+        configId.style.display = "block";
     }
 
     // Ajouter trois lignes d'inventaire au démarrage
@@ -55,6 +56,3 @@ $(document).ready(function () {
         addInventoryRow();
     }
 });
-
-
-
