@@ -19,8 +19,8 @@ $(document).ready(function () {
 
       for (let i = 0; i < 9; i++) {
         const itemIndex = inventory.children('.inventory-row').length * 9 + i;
-        const item = $(`<div class="inventory-items" id="inventory-item-${itemIndex}" onclick="open(item-config-${itemIndex})">Item ${itemIndex}</div>
-                      <div class="item-config" id="item-config-${itemIndex}">
+        const item = $(`<div class="inventory-items" id="inventory-item-${itemIndex}" onclick="open(itemConfig$${itemIndex})">Item ${itemIndex}</div>
+                      <div class="item-config" id="itemConfig${itemIndex}">
                       <input type="text" name="name"/>
                       </div>`);
         newRow.append(item);
