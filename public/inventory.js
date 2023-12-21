@@ -22,7 +22,7 @@ $(document).ready(function () {
                 <div class="item-config" id="itemConfig${itemIndex}">
                     <label for="on${itemIndex}">Activer</label><br>
                     <input type="checkbox" id="on${itemIndex}" name="on${itemIndex}">
-                    
+                    <br>
                     <label for="name${itemIndex}">Name</label><br>
                     <input type="text" id="name${itemIndex}" name="name${itemIndex}" value="">
                     
