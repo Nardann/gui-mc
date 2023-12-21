@@ -25,7 +25,7 @@ $(document).ready(function () {
                     <br>
                     <label for="name${itemIndex}">Name</label><br>
                     <input type="text" id="name${itemIndex}" name="name${itemIndex}" value="">
-                    
+                    <br>
                     <label for="display_name${itemIndex}">Name</label><br>
                     <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
 
