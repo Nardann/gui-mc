@@ -84,7 +84,7 @@ input[type=checkbox]::before {
     height: 0.65em;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #E91E63;
+    box-shadow: inset 1em 1em #008585;
     background-color: CanvasText;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transform-origin: left top;
@@ -107,7 +107,7 @@ input[type=radio] {
     background-color: #fff;
     margin: 0;
     font: inherit;
-    color: #E91E63;
+    color: #008585;
     width: 1.15em;
     height: 1.15em;
     border: 0.15em solid currentColor;
@@ -123,7 +123,7 @@ input[type=radio]::before {
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #E91E63;
+    box-shadow: inset 1em 1em #008585;
     background-color: CanvasText;
     transform-origin: top bottom;
 }
@@ -163,7 +163,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 1.5em;
     border-radius: 50%;
     background: transparent;
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -171,7 +171,7 @@ input[type=range]::-moz-range-thumb {
     height: 1.5em;
     border-radius: 50%;
     background: transparent;
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
 }
 
 input[type=range]::-ms-thumb {
@@ -179,25 +179,25 @@ input[type=range]::-ms-thumb {
     height: 1.5em;
     border-radius: 50%;
     background: transparent;
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    background: #E91E63;
+    background: #008585;
     width: 100%;
     border-radius: 1vmin;
     height: .5em;
 }
 
 input[type=range]::-moz-range-track {
-    background: #E91E63;
+    background: #008585;
     width: 100%;
     border-radius: 1vmin;
     height: .5em;
 }
 
 input[type=range]::-ms-track {
-    background: #E91E63;
+    background: #008585;
     width: 100%;
     border-radius: 1vmin;
     height: .5em;
@@ -206,10 +206,10 @@ input[type=range]::-ms-track {
 /* Button */
 input[type=button] {
     appearance: none;
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
     background: hsla(0, 0%, 0%, 0);
     padding: .85em 1.5em;
-    color: #E91E63;
+    color: #008585;
     border-radius: 2em;
     transition: 1s;
 }
@@ -217,7 +217,7 @@ input[type=button] {
 input[type=button]:hover,
 input[type=button]:focus,
 input[type=button]:active {
-    background: #E91E63;
+    background: #008585;
     color: #fff;
 }
 
@@ -232,11 +232,11 @@ label[for=file] {
     grid-gap: .5em;
     justify-items: center;
     align-content: center;
-    color: #E91E63;
-    border: .2em solid #E91E63;
+    color: #008585;
+    border: .2em solid #008585;
     background: hsla(0, 0%, 0%, 0);
     padding: .85em 1.5em;
-    color: #E91E63;
+    color: #008585;
     border-radius: 2em;
     transition: 1s;
 }
@@ -244,16 +244,16 @@ label[for=file] {
 label[for=file]:hover,
 label[for=file]:focus,
 label[for=file]:active {
-    background: #E91E63;
+    background: #008585;
     color: #fff;
 }
 
 /* Date */
 input[type=date] {
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
     padding: .8em .9em;
     border-radius: 2em;
-    color: #E91E63;
+    color: #008585;
 }
 
 input[type=date]::-webkit-datetime-edit-text {
@@ -269,10 +269,10 @@ input[type=date]::-webkit-inner-spin-button {
 input[type=number] {
     width: 3em;
     padding: 0.5em;
-    border: .2em solid #E91E63;
+    border: .2em solid #008585;
     border-radius: 1em;
     text-align: center;
-    color: #E91E63;
+    color: #008585;
     appearance: textfield;
 }
 
