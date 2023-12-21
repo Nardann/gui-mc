@@ -24,7 +24,7 @@ $(document).ready(function () {
                       <input type="text" name="name"/>
                       </div>`);
         newRow.append(item);
-        document.getElementById("inventory-item-${itemIndex}").addEventListener("click", open(itemConfig${itemIndex}) {
+        document.getElementById("inventory-item-${itemIndex}").addEventListener("click", open(`itemConfig${itemIndex}`) {
             if (event.button === 0) {
                 handleClick(this.id);
             }
