@@ -1,8 +1,12 @@
 // Fonction pour ouvrir la configuration
 function openConfig(itemConfigId) {
-    const configId = $("#" + itemConfigId);
-    configId.show();
+    if (!configOpen) {
+        const configId = $("#" + itemConfigId);
+        configId.show();
+        configOpen = true;
+    }
 }
+
 // Fonction pour fermer la configuration
 function closeConfig(itemConfigId) {
     const configId = $("#" + itemConfigId);
