@@ -49,3 +49,46 @@ body {
     transform: translate(-50%,-50%);
 }
   
+#notif {
+  position: fixed;
+  top: 20px;
+  right: -80px;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 25px;
+  opacity: 0;
+}
+#notif::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(0, 0, 0, 0.2); /* Bordure pour simuler la superposition */
+  box-sizing: border-box;
+  border-radius: 25px;
+  top: 0;
+  left: 0;
+}
+
+#notif.notif_on {
+  opacity: 1;
+  transition: transform 1s ease, opacity 1s ease;
+  transform: translateX(-100px); /* Modifié pour se décaler vers la gauche (0px) */
+}
+
+#notif.notif_off {
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  transform: translateX(100px); /* Modifié pour se décaler vers la droite (100px) */
+}
+
+
+#notif_title, #notif_text{
+  text-align: center;
+  direction: rtl;
+}
+
+#notif_title {
+  font-size: 25px;
+}
