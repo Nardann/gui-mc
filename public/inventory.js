@@ -24,11 +24,6 @@ $(document).ready(function () {
                 </div>
             `);
 
-            // Ajout du gestionnaire d'événements avec jQuery
-            item.find(`#inventory-item-${itemIndex}`).on('click', function () {
-                openConfig(`itemConfig${itemIndex}`);
-            });
-
             newRow.append(item);
         }
 
@@ -45,10 +40,16 @@ $(document).ready(function () {
         }
     }
 
+    // Utilisation de la délégation d'événements pour gérer le clic sur les éléments avec la classe "inventory-items"
+    $('#inventory').on('click', '.inventory-items', function () {
+        const itemIndex = $(this).attr('id').replace('inventory-item-', '');
+        openConfig(`itemConfig${itemIndex}`);
+    });
+
     // Fonction pour ouvrir la configuration
     function openConfig(itemConfigId) {
         const configId = $("#" + itemConfigId);
-        configId.show();  // Utilisez .show() pour afficher l'élément
+        configId.show();
     }
 
     // Ajouter trois lignes d'inventaire au démarrage
