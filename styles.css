@@ -11,7 +11,7 @@ body {
     background-color: #f0f0f0;
   }
 
-#title {
+.title {
     padding:20px;
     left:50%
     transform: translate(-50%,-50%);
