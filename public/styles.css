@@ -38,7 +38,7 @@ body {
     background-color: #e0e0e0
 }  
   
-.config-box {
+.item-config {
     display: none;
     position: absolute;
     background-color: #fff;
