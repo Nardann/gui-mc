@@ -47,8 +47,8 @@ $(document).ready(function () {
 
     // Fonction pour ouvrir la configuration
     function openConfig(itemConfigId) {
-        const configId = document.getElementById(itemConfigId);
-        configId.style.display = "block";
+        const configId = $("#" + itemConfigId);
+        configId.show();  // Utilisez .show() pour afficher l'élément
     }
 
     // Ajouter trois lignes d'inventaire au démarrage
