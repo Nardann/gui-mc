@@ -2,8 +2,6 @@ function showConfigMenu(event, caseId) {
     event.preventDefault(); // Prevent the default context menu
 
     const configBox = document.getElementById("inventory");
-    const input1 = document.getElementById("input1");
-    const input2 = document.getElementById("input2");
     for (let i = 0; i < 54; i++) {
         const case${itemIndex} = document.getElementById("inventory-item-${itemIndex}");
         case${itemIndex}.setAttribute("data-case-id", case${itemIndex});
