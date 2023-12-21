@@ -47,12 +47,6 @@ $(document).ready(function () {
         openConfig(`itemConfig${itemIndex}`);
     });
 
-    // Utilisation de la délégation d'événements pour gérer le clic sur les éléments avec la classe "inventory-items"
-    $('#inventory').on('click', '.close', function () {
-        const itemIndex = $(this).attr('id').replace('close-','');
-        closeConfig(`itemConfig${itemIndex}`);
-    });
-
     // Ajouter trois lignes d'inventaire au démarrage
     for (let i = 0; i < 3; i++) {
         addInventoryRow();
