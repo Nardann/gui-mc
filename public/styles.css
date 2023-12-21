@@ -292,7 +292,8 @@ input[type=number]::-webkit-inner-spin-button {
     "a a a a b b b b"
     "a a a a b b b b"
     "a a a a b b b b"
-    "a a a a b b b b";
+    "a a a a b b b b"
+    ". . . c c . . .";
 }
 .gridA {
   grid-area: a;
@@ -300,7 +301,9 @@ input[type=number]::-webkit-inner-spin-button {
 .gridB {
   grid-area: b;
 }
-
+.gridC {
+  grid-area: c;
+}
 
 
 
