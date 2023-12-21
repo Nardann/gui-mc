@@ -4,7 +4,7 @@ let configOpen = false;
 function openConfig(itemConfigId) {
     if (!configOpen) {
         const configId = $("#" + itemConfigId);
-        configId.show();
+        configId.css("display", "grid");
         configOpen = true;
     }else {
         showNotification("⛔", "Veuillez fermer la configuration deja ouverte")
