@@ -20,7 +20,14 @@ $(document).ready(function () {
             const item = $(`
                 <div class="inventory-items" id="inventory-item-${itemIndex}">Item_${itemIndex}</div>
                 <div class="item-config" id="itemConfig${itemIndex}">
-                    <input type="text" name="name"/>
+                    <label for="on${itemIndex}">Activer</label><br>
+                    <input type="text" id="on${itemIndex}" name="on${itemIndex}" value="">
+                    
+                    <label for="name${itemIndex}">Name</label><br>
+                    <input type="text" id="name${itemIndex}" name="name${itemIndex}" value="">
+                    
+                    <label for="display_name${itemIndex}">Name</label><br>
+                    <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
                     <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
                 </div>
             `);
