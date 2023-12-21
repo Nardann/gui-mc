@@ -4,13 +4,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
+    grid-template-areas:
+        ". . . . . . . ."
+        ". a a a a a a ."
+        ". b b b b b b ."
+        ". b b b b b b ."
+        ". . . c c . . .";
   }
-  
+
+.gridMainA {
+  grid-area: a;
+}
+.gridMainB {
+  grid-area: b;
+}
+.gridMainC {
+  grid-area: c;
+}
+
   .inventory {
     display: flex;
     flex-direction: column; /* Empiler les lignes les unes en dessous des autres */
