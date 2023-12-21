@@ -31,6 +31,9 @@ $(document).ready(function () {
                         <input type="text" id="display_name${itemIndex}" name="display_name${itemIndex}" value="">
     
                         <br><br>
+                    </div>
+                    <div class="gridC">
+                        <br><br>
                         <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
                     </div>
                 </div>
