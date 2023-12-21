@@ -3,8 +3,9 @@ function openConfig(itemConfigId) {
     const configId = $("#" + itemConfigId);
     configId.show();
 }
-// Fonction pour ouvrir la configuration
-function close(itemConfigId) {
+// Fonction pour fermer la configuration
+function closeConfig(itemConfigId) {
     const configId = $("#" + itemConfigId);
-    configId.hide();
+    configId.hide();  // Utilisez .hide() pour masquer l'élément
 }
+
