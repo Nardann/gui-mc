@@ -6,5 +6,5 @@ function openConfig(itemConfigId) {
 // Fonction pour ouvrir la configuration
 function close(itemConfigId) {
     const configId = $("#" + itemConfigId);
-    configId.show();
+    configId.hide();
 }
