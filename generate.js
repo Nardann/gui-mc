@@ -5,10 +5,10 @@ function generateConfig(nbrCase) {
         var title = titleInput.value;
     console.log(nbrCase);
     var configDeluxemenu = `
-        menu_title: ${title}
-        size: ${nbrCase}
-        items:
-        `
+menu_title: ${title}
+size: ${nbrCase}
+items:
+`
     for (let i = 0; i < nbrCase; i++) {
         
         
