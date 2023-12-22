@@ -44,17 +44,6 @@ function loadItem(nbrCase) {
     fetch(
         "./items.json"
     )
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
     .then((response) => response.json())
     .then((data) => {
         const itemSelect = document.getElementById(`item${i}`);
