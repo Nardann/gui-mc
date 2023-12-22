@@ -47,7 +47,6 @@ function loadItem(nbrCase) {
       // Chemin vers le fichier JSON
       var jsonFilePath = "./items.json";
       
-      // Effectuez une requête Fetch pour récupérer le contenu du fichier JSON
       fetch(jsonFilePath)
         .then(response => {
           if (!response.ok) {
@@ -56,20 +55,15 @@ function loadItem(nbrCase) {
           return response.json();
         })
         .then(jsonData => {
-          // Boucle à travers le JSON pour créer les options
           jsonData.forEach(item => {
-            // Créez un élément <option>
             var optionElement = document.createElement("option");
-      
-            // Définissez la valeur et le texte de l'option
             optionElement.value = item.name;
             optionElement.text = item.displayName;
-      
-            // Ajoutez l'option à la liste déroulante
             selectElement.add(optionElement);
           });
         })
         .catch(error => console.error("Fetch error:", error));
+    });
 
     }
 }
