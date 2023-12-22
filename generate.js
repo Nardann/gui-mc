@@ -1,4 +1,4 @@
-function generateConfig(nbrCase) {
+function generateConfig() {
     if (!configOpen) {
         const configId = $("#" + itemConfigId);
         configId.css("display", "grid");
