@@ -41,24 +41,23 @@ function removeNotification(message) {
 
 function loadItem(nbrCase) {
   for (let i = 0; i < nbrCase; i++) {
-    fetch(
-        "./items.json"
-    )
+    fetch("./items.json")
     .then((response) => response.json())
     .then((data) => {
-        const itemSelect = document.getElementById(`item${i}`);
-    
+        const itemSelect = document.getElementById(`item_minecraft_select${nbrCase}`);
+
+        // Créer un tableau pour stocker les options triées
         const sortedOptions = [];
-    
+        // Parcourir les données JSON et ajouter chaque élément au tableau
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
                 sortedOptions.push({ value: data[key].name, text: data[key].displayName });
             }
         }
-    
+
         // Trier le tableau par ordre alphabétique en utilisant le nom de l'élément
         sortedOptions.sort((a, b) => a.text.localeCompare(b.text));
-    
+
         // Parcourir les options triées et les ajouter au menu déroulant
         sortedOptions.forEach((optionData) => {
             const option = document.createElement("option");
@@ -67,7 +66,7 @@ function loadItem(nbrCase) {
             itemSelect.appendChild(option);
         });
         
-    
+
         // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
         itemSelect.addEventListener("change", function () {
             const selectedItemTextType = itemSelect.value;
