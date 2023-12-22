@@ -28,12 +28,10 @@ items:
             items[i] = itemInput.value;
 
             var updateInput = document.getElementById(`update: update${i}`);
-            if(updateInput.checked) {updates[i] = "true";}
-            else {updates[i] = "";}
+            if(updateInput.checked) {updates[i] = "true";}else {updates[i] = "";}
             
             var hide_attributesInput = document.getElementById(`hide_attributes${i}`);
-            if(hide_attributesInput.checked) {hide_attributes[i] = "hide_attributes: true";}
-            else {hide_attributes[i] = "";}
+            if(hide_attributesInput.checked) {hide_attributes[i] = "hide_attributes: true";}else {hide_attributes[i] = "";}
 
             configDeluxemenu = configDeluxemenu + `
   '${i}${names[i]}'
