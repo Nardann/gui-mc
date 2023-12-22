@@ -12,5 +12,5 @@ function generateConfig(nbrCase) {
             var displayNameInput = document.getElementById(`displayName${i}`);
             displayNames[i] = displayNameInput.value;
         }
-    } return names;
+    } return { names: names, displayNames: displayNames };
 }
