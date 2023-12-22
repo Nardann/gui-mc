@@ -44,7 +44,7 @@ function loadItem(nbrCase) {
     fetch("./items.json")
     .then((response) => response.json())
     .then((data) => {
-        const itemSelect = document.getElementById(`item_minecraft_select${nbrCase}`);
+        const itemSelect = document.getElementById("item_minecraft_select");
 
         // Créer un tableau pour stocker les options triées
         const sortedOptions = [];
@@ -65,12 +65,11 @@ function loadItem(nbrCase) {
             option.text = optionData.text;
             itemSelect.appendChild(option);
         });
-        
 
         // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
         itemSelect.addEventListener("change", function () {
             const selectedItemTextType = itemSelect.value;
-            document.getElementsByName(`item_minecraft0`)[0].value = selectedItemTextType;
+            document.getElementsByName("item_minecraft")[0].value = selectedItemTextType;
             
         });
     })
