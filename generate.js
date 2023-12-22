@@ -7,11 +7,7 @@ function generateConfig(nbrCase) {
     var titleInput = document.getElementById(`title`);
         var title = titleInput.value;
     console.log(nbrCase);
-    var configDeluxemenu = `
-menu_title: ${title}
-size: ${nbrCase}
-items:
-`
+    var configDeluxemenu = `menu_title: ${title}\nsize: ${nbrCase}\nitems:\n`
     for (let i = 0; i < nbrCase; i++) {
         
         
@@ -33,13 +29,7 @@ items:
             var hide_attributesInput = document.getElementById(`hide_attributes${i}`);
             if(hide_attributesInput.checked) {hide_attributes[i] = "true";}
 
-            configDeluxemenu = configDeluxemenu + `
-  '${i}${names[i]}'
-    display_name: '${displayNames[i]}'
-    material: '${itemInput[i]}'
-    slot: ${i}
-    hide_attributes: ${hide_attributes[i]}
-    update: ${update[i]}`
+            configDeluxemenu = configDeluxemenu + `  '${i}${names[i]}'\n    display_name: '${displayNames[i]}'\n    material: '${itemInput[i]}'\n    slot: ${i}\n    hide_attributes: ${hide_attributes[i]}\n    update: ${update[i]}`
             
             
         }
