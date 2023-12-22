@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
 
     $('#generateBtn').on('click', function () {
-        generateConfig();
+        generateConfig(nbrCase);
     });
     // Fonction pour ajouter une ligne d'inventaire
     function addInventoryRow() {
