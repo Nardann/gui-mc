@@ -15,7 +15,7 @@ $(document).ready(function () {
     function addInventoryRow() {
         const inventory = $('#inventory');
         const newRow = $('<div class="inventory-row"></div>');
-        let nbrCase = nbrCase + 9;
+        nbrCase = nbrCase + 9;
         for (let i = 0; i < 9; i++) {
             const itemIndex = inventory.children('.inventory-row').length * 9 + i;
             const item = $(`
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
         if (rows.length > 1) {
             rows.last().remove();
-            let nbrCase = nbrCase - 9;
+            nbrCase = nbrCase - 9;
         }
     }
 
