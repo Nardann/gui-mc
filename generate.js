@@ -39,7 +39,7 @@ items:
     material: '${itemInput[i]}'
     slot: ${i}
     hide_attributes: ${hide_attributes[i]}
-    update: ${update[i]}
+    update: ${updates[i]}
 `
             
             
