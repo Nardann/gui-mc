@@ -41,49 +41,35 @@ function removeNotification(message) {
 
 function loadItem(nbrCase) {
     for (let i = 0; i < nbrCase; i++) {
-        fetch("./items.json")
-            .then((response) => response.json())
-            .then((data) => {
-                const itemSelect = document.getElementById(`item${i}`);
+      // Sélectionnez l'élément <select>
+      var selectElement = document.getElementById(`item${nbrCase}`);
+      
+      // Chemin vers le fichier JSON
+      var jsonFilePath = "./items.json";
+      
+      // Effectuez une requête Fetch pour récupérer le contenu du fichier JSON
+      fetch(jsonFilePath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(jsonData => {
+          // Boucle à travers le JSON pour créer les options
+          jsonData.forEach(item => {
+            // Créez un élément <option>
+            var optionElement = document.createElement("option");
+      
+            // Définissez la valeur et le texte de l'option
+            optionElement.value = item.name;
+            optionElement.text = item.displayName;
+      
+            // Ajoutez l'option à la liste déroulante
+            selectElement.add(optionElement);
+          });
+        })
+        .catch(error => console.error("Fetch error:", error));
 
-                if (!itemSelect) {
-                    console.error(`Élément avec l'ID 'item${i}' non trouvé.`);
-                    return;
-                }
-
-                const sortedOptions = [];
-
-                for (const key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        sortedOptions.push({ value: data[key].name, text: data[key].displayName });
-                    }
-                }
-
-                // Trier le tableau par ordre alphabétique en utilisant le nom de l'élément
-                sortedOptions.sort((a, b) => a.text.localeCompare(b.text));
-
-                // Parcourir les options triées et les ajouter au menu déroulant
-                sortedOptions.forEach((optionData) => {
-                    const option = document.createElement("option");
-                    option.value = optionData.value;
-                    option.text = optionData.text;
-                    itemSelect.appendChild(option);
-                });
-
-                // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
-                itemSelect.addEventListener("change", function () {
-                    const selectedItemTextType = itemSelect.value;
-                    console.log(`Sélection de l'élément ${i}: ${selectedItemTextType}`);
-                    const itemDisplay = document.getElementById(`itemDisplay${i}`);
-                    if (itemDisplay) {
-                        itemDisplay.value = selectedItemTextType;
-                    } else {
-                        console.error(`Élément avec l'ID 'itemDisplay${i}' non trouvé.`);
-                    }
-                });
-            })
-            .catch((error) => {
-                console.error("Erreur lors de la récupération des données JSON:", error);
-            });
     }
 }
