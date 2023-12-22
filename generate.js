@@ -1,4 +1,3 @@
-function generateConfig(nbr_Case) {
-    const nbrCase = nbr_Case;
+function generateConfig(nbrCase) {
     console.log(nbrCase);
 }
