@@ -41,7 +41,7 @@ function removeNotification(message) {
 
 
 // Sélectionnez l'élément <select>
-var item = document.getElementsByClassName("item");
+var selectElement = document.getElementsByClassName("item")[0];
 
 // Chemin vers le fichier JSON
 var jsonFilePath = "./items.json";
@@ -54,18 +54,19 @@ xhr.onreadystatechange = function() {
     var jsonData = JSON.parse(xhr.responseText);
 
     // Boucle à travers le JSON pour créer les options
-    jsonData.forEach(function(item) {
+    jsonData.forEach(function(itemData) {
       // Créez un élément <option>
       var optionElement = document.createElement("option");
 
       // Définissez la valeur et le texte de l'option
-      optionElement.value = item.name;
-      optionElement.text = item.displayName;
+      optionElement.value = itemData.name;
+      optionElement.text = itemData.displayName;
 
       // Ajoutez l'option à la liste déroulante
       selectElement.add(optionElement);
-    }
+    });
   }
 };
 xhr.open("GET", jsonFilePath, true);
 xhr.send();
+
