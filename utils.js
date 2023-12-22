@@ -70,7 +70,7 @@ function loadItem(nbrCase) {
         // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
         itemSelect.addEventListener("change", function () {
             const selectedItemTextType = itemSelect.value;
-            document.getElementsByName(`item_minecraft`)[0].value = selectedItemTextType;
+            document.getElementsByName(`item_minecraft0`)[0].value = selectedItemTextType;
             
         });
     })
