@@ -33,7 +33,7 @@ $(document).ready(function () {
                 <div class="item-config gridConfig" id="itemConfig${itemIndex}">
                     <h2>Item_${itemIndex}</h2>
                     <div class="gridConfigA">
-                        <label for="on${itemIndex}">Activer</label>
+                        <label for="on${itemIndex}">Enable</label>
                         <input type="checkbox" id="on${itemIndex}" name="on${itemIndex}">
                         <br>
                         <label for="name${itemIndex}">Name</label><br>
@@ -46,9 +46,16 @@ $(document).ready(function () {
                         <select class="item" id="item${itemIndex}"></select>
                         <br>
                     </div>
+                    <div class="gridConfigB">
+                        <label for="update${itemIndex}">Update</label>
+                        <input type="checkbox" id="update${itemIndex}" name="update${itemIndex}">
+                        <br>
+                        <label for="hide_attributes${itemIndex}">Update</label>
+                        <input type="checkbox" id="hide_attributes${itemIndex}" name="hide_attributes${itemIndex}">
+                    </div>
                     <div class="gridConfigC">
                         <br>
-                        <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Fermer</button>
+                        <button class="close-config" onclick="closeConfig('itemConfig${itemIndex}')">Close</button>
                     </div>
                 </div>
             `);
