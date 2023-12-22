@@ -1,4 +1,4 @@
-let nbrCase = 27;
+let nbrCase = 0;
 $(document).ready(function () {
     // Gestionnaire de clic sur les boutons Ajouter/Supprimer (utilisation de délégués d'événements)
     $('#addRowBtn').on('click', function () {
@@ -15,7 +15,7 @@ $(document).ready(function () {
     function addInventoryRow() {
         const inventory = $('#inventory');
         const newRow = $('<div class="inventory-row"></div>');
-
+        let nbrCase += 9;
         for (let i = 0; i < 9; i++) {
             const itemIndex = inventory.children('.inventory-row').length * 9 + i;
             const item = $(`
@@ -54,6 +54,7 @@ $(document).ready(function () {
 
         if (rows.length > 1) {
             rows.last().remove();
+            let nbrCase -= 9;
         }
     }
 
