@@ -46,6 +46,11 @@ function loadItem(nbrCase) {
             .then((data) => {
                 const itemSelect = document.getElementById(`item${i}`);
 
+                if (!itemSelect) {
+                    console.error(`Élément avec l'ID 'item${i}' non trouvé.`);
+                    return;
+                }
+
                 const sortedOptions = [];
 
                 for (const key in data) {
@@ -68,7 +73,13 @@ function loadItem(nbrCase) {
                 // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
                 itemSelect.addEventListener("change", function () {
                     const selectedItemTextType = itemSelect.value;
-                    document.getElementById(`itemDisplay${i}`).value = selectedItemTextType;
+                    console.log(`Sélection de l'élément ${i}: ${selectedItemTextType}`);
+                    const itemDisplay = document.getElementById(`itemDisplay${i}`);
+                    if (itemDisplay) {
+                        itemDisplay.value = selectedItemTextType;
+                    } else {
+                        console.error(`Élément avec l'ID 'itemDisplay${i}' non trouvé.`);
+                    }
                 });
             })
             .catch((error) => {
@@ -76,4 +87,3 @@ function loadItem(nbrCase) {
             });
     }
 }
-
