@@ -50,7 +50,7 @@ $(document).ready(function () {
                         <label for="update${itemIndex}">Update</label>
                         <input type="checkbox" id="update${itemIndex}" name="update${itemIndex}">
                         <br>
-                        <label for="hide_attributes${itemIndex}">Update</label>
+                        <label for="hide_attributes${itemIndex}">Hide Attributes</label>
                         <input type="checkbox" id="hide_attributes${itemIndex}" name="hide_attributes${itemIndex}">
                     </div>
                     <div class="gridConfigC">
