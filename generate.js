@@ -1,6 +1,8 @@
 var names = [];
 var displayNames = [];
 var items = [];
+var updates = [];
+var hide_attributes = [];
 function generateConfig(nbrCase) {
     var titleInput = document.getElementById(`title`);
         var title = titleInput.value;
@@ -25,11 +27,19 @@ items:
             var itemInput = document.getElementById(`item${i}`);
             items[i] = itemInput.value;
 
+            var updateInput = document.getElementById(`update${i}`);
+            if(updateInput.checked) {updates[i] = "true";}
+            
+            var hide_attributesInput = document.getElementById(`hide_attributes${i}`);
+            if(hide_attributesInput.checked) {hide_attributes[i] = "true";}
+
             configDeluxemenu = configDeluxemenu + `
   '${i}${names[i]}'
     display_name: '${displayNames[i]}'
     material: '${itemInput[i]}'
-    slot: ${i}`
+    slot: ${i}
+    hide_attributes: ${hide_attributes[i]}
+    update: ${update[i]}`
             
             
         }
