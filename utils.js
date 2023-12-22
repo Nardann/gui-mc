@@ -47,7 +47,6 @@ function loadItem(nbrCase) {
         const itemSelect = document.getElementById(`item_minecraft_select${nbrCase}`);
         // Créer un tableau pour stocker les options triées
         const sortedOptions = [];
-        const sortedOptionsRepair = [];
         // Parcourir les données JSON et ajouter chaque élément au tableau
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
