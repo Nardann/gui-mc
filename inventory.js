@@ -1,3 +1,4 @@
+let nbrCase = 27;
 $(document).ready(function () {
     // Gestionnaire de clic sur les boutons Ajouter/Supprimer (utilisation de délégués d'événements)
     $('#addRowBtn').on('click', function () {
