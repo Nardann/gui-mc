@@ -40,7 +40,7 @@ function removeNotification(message) {
 }
 
 function loadItem(nbrCase) {
-  for (let i = 0; i < 27; i++) {
+  for (let i = 0; i < nbrCase; i++) {
     fetch(
         "./items.json"
     )
