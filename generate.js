@@ -10,6 +10,6 @@ function generateConfig(nbrCase) {
 
             var displayNameInput = document.getElementById(`displayName${i}`);
             displayName[i] = displayNameInput.value;
-        } return names;
+        }
     } return names;
 }
