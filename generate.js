@@ -1,4 +1,5 @@
 var names = [];
+var displayNames = [];
 function generateConfig(nbrCase) {
     console.log(nbrCase);
     for (let i = 0; i < nbrCase; i++) {
@@ -9,7 +10,7 @@ function generateConfig(nbrCase) {
             names[i] = nameInput.value;
 
             var displayNameInput = document.getElementById(`displayName${i}`);
-            displayName[i] = displayNameInput.value;
+            displayNames[i] = displayNameInput.value;
         }
     } return names;
 }
