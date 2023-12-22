@@ -41,42 +41,42 @@ function removeNotification(message) {
 
 function loadItem(nbrCase) {
   for (let i = 0; i < nbrCase; i++) {
-    fetch(
-        "./items.json"
-    )
-    .then((response) => response.json())
-    .then((data) => {
+    fetch("./items.json")
+      .then((response) => response.json())
+      .then((data) => {
         const itemSelect = document.getElementById(`item${i}`);
-    
+
         const sortedOptions = [];
-    
+
         for (const key in data) {
-            if (data.hasOwnProperty(key)) {
-                sortedOptions.push({ value: data[key].name, text: data[key].displayName });
-            }
+          if (data.hasOwnProperty(key)) {
+            sortedOptions.push({
+              value: data[key].name,
+              text: data[key].displayName,
+            });
+          }
         }
-    
+
         // Trier le tableau par ordre alphabétique en utilisant le nom de l'élément
         sortedOptions.sort((a, b) => a.text.localeCompare(b.text));
-    
+
         // Parcourir les options triées et les ajouter au menu déroulant
         sortedOptions.forEach((optionData) => {
-            const option = document.createElement("option");
-            option.value = optionData.value;
-            option.text = optionData.text;
-            itemSelect.appendChild(option);
+          const option = document.createElement("option");
+          option.value = optionData.value;
+          option.text = optionData.text;
+          itemSelect.appendChild(option);
         });
-        
-    
+
         // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
         itemSelect.addEventListener("change", function () {
-            const selectedItemTextType = itemSelect.value;
-            document.getElementsById(`item${i}`).value = selectedItemTextType;
-            
+          const selectedItemTextType = itemSelect.value;
+          document.getElementsByName(`item${i}`)[0].value =
+            selectedItemTextType;
         });
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.error("Erreur lors de la récupération des données JSON:", error);
-    });
+      });
   }
 }
