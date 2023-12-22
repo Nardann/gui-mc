@@ -4,7 +4,7 @@ function generateConfig(nbrCase) {
         var onInput = document.getElementById(`on${i}`);
         if(onInput.checked) {
             var nameInput = document.getElementById(`name${i}`);
-            var name[i] = nameInput.value;
+            name[i] = nameInput.value;
             console.log(name[i]);
         }
     }
