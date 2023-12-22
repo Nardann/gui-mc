@@ -41,7 +41,7 @@ function removeNotification(message) {
 
 function loadItem(nbrCase) {
   for (let i = 0; i < nbrCase; i++) {
-    fetch("./items.json")
+    fetch("https://gui-mc.nardann.xyz/items.json")
     .then((response) => response.json())
     .then((data) => {
         const itemSelect = document.getElementById(`item_minecraft_select${nbrCase}`);
