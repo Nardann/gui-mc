@@ -57,6 +57,7 @@ $(document).ready(function () {
         }
 
         inventory.append(newRow);
+        function loadItem(nbrCase);
     }
 
     // Fonction pour supprimer une ligne d'inventaire
