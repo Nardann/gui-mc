@@ -40,30 +40,43 @@ function removeNotification(message) {
 }
 
 function loadItem(nbrCase) {
-    for (let i = 0; i < nbrCase; i++) {
-      // Sélectionnez l'élément <select>
-      var selectElement = document.getElementById(`item${nbrCase}`);
-      
-      // Chemin vers le fichier JSON
-      var jsonFilePath = "./items.json";
-      
-      fetch(jsonFilePath)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(jsonData => {
-          jsonData.forEach(item => {
-            var optionElement = document.createElement("option");
-            optionElement.value = item.name;
-            optionElement.text = item.displayName;
-            selectElement.add(optionElement);
-          });
-        })
-        .catch(error => console.error("Fetch error:", error));
+  for (let i = 0; i < 27; i++) {
+    fetch(
+        "./items.json"
+    )
+    .then((response) => response.json())
+    .then((data) => {
+        const itemSelect = document.getElementById(`item${i}`);
+    
+        const sortedOptions = [];
+    
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                sortedOptions.push({ value: data[key].name, text: data[key].displayName });
+            }
+        }
+    
+        // Trier le tableau par ordre alphabétique en utilisant le nom de l'élément
+        sortedOptions.sort((a, b) => a.text.localeCompare(b.text));
+    
+        // Parcourir les options triées et les ajouter au menu déroulant
+        sortedOptions.forEach((optionData) => {
+            const option = document.createElement("option");
+            option.value = optionData.value;
+            option.text = optionData.text;
+            itemSelect.appendChild(option);
+        });
+        
+    
+        // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
+        itemSelect.addEventListener("change", function () {
+            const selectedItemTextType = itemSelect.value;
+            document.getElementsByName("item_minecraft")[0].value = selectedItemTextType;
+            
+        });
+    })
+    .catch((error) => {
+        console.error("Erreur lors de la récupération des données JSON:", error);
     });
-
-    }
+  }
 }
