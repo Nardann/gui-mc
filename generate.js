@@ -28,7 +28,8 @@ items:
             configDeluxemenu = configDeluxemenu + `
   '${i}${names[i]}'
     display_name: '${displayNames[i]}'
-    material: '${itemInput[i]}'`
+    material: '${itemInput[i]}'
+    slot: ${i}`
             
             
         }
