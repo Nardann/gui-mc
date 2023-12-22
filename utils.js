@@ -71,7 +71,7 @@ function loadItem(nbrCase) {
         // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
         itemSelect.addEventListener("change", function () {
             const selectedItemTextType = itemSelect.value;
-            document.getElementsByName(`item${i}`).value = selectedItemTextType;
+            document.getElementsById(`item${i}`).value = selectedItemTextType;
             
         });
     })
