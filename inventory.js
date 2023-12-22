@@ -43,7 +43,7 @@ $(document).ready(function () {
                         <input type="text" id="displayName${itemIndex}" name="displayName${itemIndex}" value="">
                         <br>
                         <label for="item${itemIndex}">Display Name</label><br>
-                        <select class="item" id="item${itemIndex}" name="item${itemIndex}"></select>
+                        <select name="item_minecraft${itemIndex}" id="item_minecraft_select${itemIndex}"></select>
                         <br>
                     </div>
                     <div class="gridConfigB">
