@@ -41,7 +41,7 @@ function removeNotification(message) {
 
 
 // Sélectionnez l'élément <select>
-var selectElement = document.getElementsByClassName("item")[0];
+var selectElement = document.getElementsByClassName("item");
 
 // Chemin vers le fichier JSON
 var jsonFilePath = "./items.json";
