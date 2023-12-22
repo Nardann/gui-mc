@@ -39,13 +39,13 @@ function removeNotification(message) {
   notif_text.innerText = message;
 }
 
-for
+for (let i = 0; i < 27; i++) {
 fetch(
     "./items.json"
 )
 .then((response) => response.json())
 .then((data) => {
-    const itemSelect = document.getElementById("item");
+    const itemSelect = document.getElementById(`item${i}`);
 
     const sortedOptions = [];
 
@@ -77,4 +77,4 @@ fetch(
 .catch((error) => {
     console.error("Erreur lors de la récupération des données JSON:", error);
 });
-
+}
