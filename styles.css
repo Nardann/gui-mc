@@ -55,6 +55,16 @@ body {
     transform: translate(-50%,-50%);
 }
 
+.code {
+    background-color: rgba(34, 39, 46, 1);
+    color: white;
+    padding: 1%;
+    border-radius: 25px;
+    padding-left: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 /* Text */
 input[type=text] {
