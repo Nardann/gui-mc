@@ -1,5 +1,4 @@
-function generateConfig() {
-    const configId = $("#" + itemConfigId);
-    configId.css("display", "grid");
-    configOpen = true;
+function generateConfig(nbrCase) {
+    const nbrCase = $("#" + nbrCase);
+    console.log(nbrCase);
 }
