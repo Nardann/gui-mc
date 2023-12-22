@@ -45,4 +45,9 @@ items:
         }
     }
     console.log(configDeluxemenu);
+    var code = document.getElementById("code");
+    code.textContent = configDeluxemenu;
+
+    
+
 }
