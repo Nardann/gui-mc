@@ -44,6 +44,17 @@ function loadItem(nbrCase) {
     fetch(
         "./items.json"
     )
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
     .then((response) => response.json())
     .then((data) => {
         const itemSelect = document.getElementById(`item${i}`);
@@ -77,5 +88,6 @@ function loadItem(nbrCase) {
     })
     .catch((error) => {
         console.error("Erreur lors de la récupération des données JSON:", error);
+    });
   }
 }
