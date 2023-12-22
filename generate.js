@@ -1,5 +1,6 @@
 var names = [];
 var displayNames = [];
+var items = [];
 function generateConfig(nbrCase) {
     var titleInput = document.getElementById(`title`);
         var title = titleInput.value;
@@ -22,7 +23,7 @@ items:
             displayNames[i] = displayNameInput.value;
 
             var itemInput = document.getElementById(`item${i}`);
-            itemInput[i] = itemInput.value;
+            items[i] = itemInput.value;
 
             configDeluxemenu = configDeluxemenu + `
   '${i}${names[i]}'
