@@ -21,8 +21,10 @@ items:
             var displayNameInput = document.getElementById(`displayName${i}`);
             displayNames[i] = displayNameInput.value;
 
-
-
+            configDeluxemenu = configDeluxemenu + `
+  '${names[i]}'
+    display_name: '${displayNames[i]}'`
+            
             
         }
     }
