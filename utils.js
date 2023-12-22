@@ -40,33 +40,41 @@ function removeNotification(message) {
 }
 
 
-// Sélectionnez l'élément <select>
-var selectElement = document.getElementsByClassName("item");
+fetch(
+    "./items.json"
+)
+.then((response) => response.json())
+.then((data) => {
+    const itemSelect = document.getElementByClassName("item");
 
-// Chemin vers le fichier JSON
-var jsonFilePath = "./items.json";
+    const sortedOptions = [];
 
-// Effectuez une requête AJAX pour récupérer le contenu du fichier JSON
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    // Parsez le contenu JSON
-    var jsonData = JSON.parse(xhr.responseText);
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            sortedOptions.push({ value: data[key].name, text: data[key].displayName });
+        }
+    }
 
-    // Boucle à travers le JSON pour créer les options
-    jsonData.forEach(function(itemData) {
-      // Créez un élément <option>
-      var optionElement = document.createElement("option");
+    // Trier le tableau par ordre alphabétique en utilisant le nom de l'élément
+    sortedOptions.sort((a, b) => a.text.localeCompare(b.text));
 
-      // Définissez la valeur et le texte de l'option
-      optionElement.value = itemData.name;
-      optionElement.text = itemData.displayName;
-
-      // Ajoutez l'option à la liste déroulante
-      selectElement.add(optionElement);
+    // Parcourir les options triées et les ajouter au menu déroulant
+    sortedOptions.forEach((optionData) => {
+        const option = document.createElement("option");
+        option.value = optionData.value;
+        option.text = optionData.text;
+        itemSelect.appendChild(option);
     });
-  }
-};
-xhr.open("GET", jsonFilePath, true);
-xhr.send();
+    
+
+    // Gérer la mise à jour de l'input de l'affichage de l'élément sélectionné
+    itemSelect.addEventListener("change", function () {
+        const selectedItemTextType = itemSelect.value;
+        document.getElementsByName("item_minecraft")[0].value = selectedItemTextType;
+        
+    });
+})
+.catch((error) => {
+    console.error("Erreur lors de la récupération des données JSON:", error);
+});
 
