@@ -25,6 +25,6 @@ items:
 
             
         }
-    } return { names: names, displayNames: displayNames };
+    }
     console.log(configDeluxemenu);
 }
