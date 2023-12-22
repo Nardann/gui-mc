@@ -38,3 +38,34 @@ function removeNotification(message) {
   notif_title.innerText = message;
   notif_text.innerText = message;
 }
+
+
+// Sélectionnez l'élément <select>
+var item = document.getElementById("item");
+
+// Chemin vers le fichier JSON
+var jsonFilePath = "./items.json";
+
+// Effectuez une requête AJAX pour récupérer le contenu du fichier JSON
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    // Parsez le contenu JSON
+    var jsonData = JSON.parse(xhr.responseText);
+
+    // Boucle à travers le JSON pour créer les options
+    jsonData.forEach(function(item) {
+      // Créez un élément <option>
+      var optionElement = document.createElement("option");
+
+      // Définissez la valeur et le texte de l'option
+      optionElement.value = item.name;
+      optionElement.text = item.displayName;
+
+      // Ajoutez l'option à la liste déroulante
+      selectElement.add(optionElement);
+    }
+  }
+};
+xhr.open("GET", jsonFilePath, true);
+xhr.send();
