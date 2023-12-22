@@ -41,7 +41,7 @@ function removeNotification(message) {
 
 function loadItem(nbrCase) {
   for (let i = 0; i < nbrCase; i++) {
-    var selectElement = document.getElementById("mySelect");
+    var selectElement = document.getElementById(`item_minecraft_select${nbrCase}`);
     fetch("./items.json")
     .then(response => {
       if (!response.ok) {
