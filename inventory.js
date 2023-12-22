@@ -11,6 +11,16 @@ $(document).ready(function () {
         removeInventoryRow();
     });
 
+
+        // Utilisation de la délégation d'événements pour gérer le clic sur les éléments avec la classe "inventory-items"
+    $('#inventory').on('click', '.inventory-items', function () {
+        const itemIndex = $(this).attr('id').replace('inventory-item-', '');
+        openConfig(`itemConfig${itemIndex}`);
+    });
+
+    $('#generateBtn').on('click', function () {
+        generateConfig();
+    });
     // Fonction pour ajouter une ligne d'inventaire
     function addInventoryRow() {
         const inventory = $('#inventory');
@@ -58,11 +68,7 @@ $(document).ready(function () {
         }
     }
 
-    // Utilisation de la délégation d'événements pour gérer le clic sur les éléments avec la classe "inventory-items"
-    $('#inventory').on('click', '.inventory-items', function () {
-        const itemIndex = $(this).attr('id').replace('inventory-item-', '');
-        openConfig(`itemConfig${itemIndex}`);
-    });
+
 
     // Ajouter trois lignes d'inventaire au démarrage
     for (let i = 0; i < 3; i++) {
