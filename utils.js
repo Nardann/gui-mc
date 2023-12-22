@@ -39,13 +39,13 @@ function removeNotification(message) {
   notif_text.innerText = message;
 }
 
-
+for
 fetch(
     "./items.json"
 )
 .then((response) => response.json())
 .then((data) => {
-    const itemSelect = document.getElementByClassName("item");
+    const itemSelect = document.getElementById("item");
 
     const sortedOptions = [];
 
