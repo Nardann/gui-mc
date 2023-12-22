@@ -22,7 +22,7 @@ items:
             displayNames[i] = displayNameInput.value;
 
             configDeluxemenu = configDeluxemenu + `
-  '${names[i]}'
+  '${i}${names[i]}'
     display_name: '${displayNames[i]}'`
             
             
