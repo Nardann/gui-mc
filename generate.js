@@ -6,7 +6,7 @@ function generateConfig(nbrCase) {
         if(onInput.checked) {
             var nameInput = document.getElementById(`name${i}`);
             names[i] = nameInput.value;
-            console.log(`Valeur pour name${i}:`, names[i]);
+            console.log(names[i]);
         }
     }
 }
