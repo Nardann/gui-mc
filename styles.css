@@ -19,6 +19,11 @@ body {
 #main {
     display: flex;
 }
+
+#rows {
+    display: flex;
+}
+
 #inventory {
     display: flex;
     flex-direction: column; /* Empiler les lignes les unes en dessous des autres */
