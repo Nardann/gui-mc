@@ -20,9 +20,74 @@ body {
     display: flex;
 }
 
+
+
 #rows {
-    display: flex;
+  display: flex;
+  width: 380px;
+  gap: 10px;
+  --b: 5px;   /* the border thickness */
+  --h: 1.8em; /* the height */
 }
+#rows #rowsbtn {
+  --_c: #88C100;
+  flex: calc(0.8 + var(--_s,0));
+  min-width: 0;
+  font-size: 40px;
+  font-weight: bold;
+  height: var(--h);
+  cursor: pointer;
+  color: var(--_c);
+  border: var(--b) solid var(--_c);
+  background: 
+    conic-gradient(at calc(100% - 1.3*var(--b)) 0,var(--_c) 209deg, #0000 211deg) 
+    border-box;
+  clip-path: polygon(0 0,100% 0,calc(100% - 0.577*var(--h)) 100%,0 100%);
+  padding: 0 calc(0.288*var(--h)) 0 0;
+  margin: 0 calc(-0.288*var(--h)) 0 0;
+  box-sizing: border-box;
+  transition: flex .4s;
+}
+#rows #rowsbtn + #rowsbtn {
+  --_c: #FF003C;
+  flex: calc(.75 + var(--_s,0));
+  background: 
+    conic-gradient(from -90deg at calc(1.3*var(--b)) 100%,var(--_c) 119deg, #0000 121deg) 
+    border-box;
+  clip-path: polygon(calc(0.577*var(--h)) 0,100% 0,100% 100%,0 100%);
+  margin: 0 0 0 calc(-0.288*var(--h));
+  padding: 0 0 0 calc(0.288*var(--h));
+}
+#rows #rowsbtn:focus-visible {
+  outline-offset: calc(-2*var(--b));
+  outline: calc(var(--b)/2) solid #000;
+  background: none;
+  clip-path: none;
+  margin: 0;
+  padding: 0;
+}
+#rows #rowsbtn:focus-visible + #rowsbtn {
+  background: none;
+  clip-path: none;
+  margin: 0;
+  padding: 0;
+}
+#rows #rowsbtn:has(+ #rowsbtn:focus-visible) {
+  background: none;
+  clip-path: none;
+  margin: 0;
+  padding: 0;
+}
+#rowsbtn:hover,
+#rowsbtn:active:not(:focus-visible) {
+  --_s: .75;
+}
+#rowsbtn:active {
+  box-shadow: inset 0 0 0 100vmax var(--_c);
+  color: #fff;
+}
+
+
 
 #inventory {
     display: flex;
