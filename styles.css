@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column; /* Empiler les lignes les unes en dessous des autres */
     gap: 5px;
-    max-width: 600px;
+    max-width: 50%;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
