@@ -17,6 +17,9 @@ body {
     transform: translate(-50%,-50%);
 }
 
+#main {
+    display: flex;
+}
 #inventory {
     display: flex;
     flex-direction: column; /* Empiler les lignes les unes en dessous des autres */
